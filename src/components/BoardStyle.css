@@ -109,6 +109,7 @@ h3 {
   -o-animation-fill-mode: forwards;   
   -ms-animation-fill-mode: forwards;  
   animation-fill-mode: forwards; 
+  pointer-events: none;
 }
 
 .disableClickEvent {
@@ -153,7 +154,7 @@ h3 {
 }
 
 .imageOverlayScreen {
-  margin: 6%;
+  margin: 10%;
   width: 35%;
   height: 50%;
   /* transition: visibility 0s, opacity 5s linear; */
