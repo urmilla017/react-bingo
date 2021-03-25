@@ -36,13 +36,13 @@ describe('Bingo Board', function() {
     it.only('should have two diagonal bingos', function() {
         cy.get('.tileWrapper > :nth-child(1)').click();
         cy.get('.tileWrapper > :nth-child(7)').click();
-        cy.get(':nth-child(19)').click();
-        cy.get(':nth-child(25)').click();
+        cy.get('.tileWrapper > :nth-child(19)').click();
+        cy.get('.tileWrapper > :nth-child(25)').click();
 
         cy.get('.tileWrapper > :nth-child(5)').click();
         cy.get('.tileWrapper > :nth-child(9)').click();
-        cy.get(':nth-child(17)').click();
-        cy.get(':nth-child(21)').click();
+        cy.get('.tileWrapper > :nth-child(17)').click();
+        cy.get('.tileWrapper > :nth-child(21)').click();
 
         cy.get('.bingoBoxDiv').invoke('text').should('eq', 'BI');
     });
@@ -50,26 +50,27 @@ describe('Bingo Board', function() {
     it.only('should win the game and show confetti', function() {
         cy.get('.tileWrapper > :nth-child(2)').click();
         cy.get('.tileWrapper > :nth-child(7)').click();
-        cy.get(':nth-child(12)').click();
-        cy.get(':nth-child(17)').click();
-        cy.get(':nth-child(22)').click();
+        cy.get('.tileWrapper > :nth-child(12)').click();
+        cy.get('.tileWrapper > :nth-child(17)').click();
+        cy.get('.tileWrapper > :nth-child(22)').click();
 
+        cy.get('.tileWrapper > :nth-child(9)').click();
         cy.get('.tileWrapper > :nth-child(1)').click();
-        cy.get(':nth-child(19)').click();
-        cy.get(':nth-child(25)').click();
+        cy.get('.tileWrapper > :nth-child(19)').click();
+        cy.get('.tileWrapper > :nth-child(25)').click();
 
         cy.get('.tileWrapper > :nth-child(6)').click();
-        cy.get(':nth-child(11)').click();
-        cy.get(':nth-child(16)').click();
-        cy.get(':nth-child(21)').click();
+        cy.get('.tileWrapper > :nth-child(11)').click();
+        cy.get('.tileWrapper > :nth-child(16)').click();
+        cy.get('.tileWrapper > :nth-child(21)').click();
 
         cy.get('.tileWrapper > :nth-child(3)').click();
         cy.get('.tileWrapper > :nth-child(4)').click();
         cy.get('.tileWrapper > :nth-child(5)').click();
 
-        cy.get(':nth-child(14)').click();
-        cy.get(':nth-child(20)').click();
-        cy.get(':nth-child(15)').click();
+        cy.get('.tileWrapper > :nth-child(14)').click();
+        cy.get('.tileWrapper > :nth-child(20)').click();
+        cy.get('.tileWrapper > :nth-child(15)').click();
 
         cy.get('.bingoBoxDiv').invoke('text').should('eq', 'BINGO')
         cy.get('.overlayScreen').should('have.class', 'overlayScreenDisplay');

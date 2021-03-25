@@ -141,6 +141,7 @@ const Board = () => {
     const [bingoCol, setBingoCol] = useState();
     const [bingoDiaLeft, setBingoDiaLeft] = useState(false);
     const [bingoDiaRight, setBingoDiaRight] = useState(false);
+    // const [whatBingo, setWhatBingo] = useState('');
     const [bingoCount, setBingoCount] = useState(-1);
     const [userWon, setUserWon] = useState(false);
 
@@ -196,7 +197,6 @@ const Board = () => {
                 const bingoDiagRight = bingoMatrixRangeDia.every(index => isChosen[index * 5 + 4 - index]);
                 setBingoDiaRight(bingoDiagRight);
             }
-
         };
 
         setIsItBingo(checkForBingo(isChosen));

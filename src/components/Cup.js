@@ -9,36 +9,39 @@ const config = {
   startVelocity: 40,
   elementCount: 70,
   dragFriction: 0.12,
-  duration: 8000,
+  duration: 3000,
   stagger: 3,
   width: "10px",
   height: "10px",
-  perspective: "500px",
+  perspective: "190px",
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
 const Cup = ({ bingoCount, userWon }) => {
     const [renderLetter, setRenderLetter] = useState('');
+    const [eachWin, setEachWin] = useState(false);
 
     useEffect(() => {
         if(bingoCount > -1) {
             let charAtIndex = 'BINGO'.charAt(bingoCount);
-            setRenderLetter(renderLetter.concat(charAtIndex));
+            setRenderLetter(renderLetter => renderLetter.concat(charAtIndex));
+            setEachWin(true);
         }
 
-        console.log('renderLetter:' + renderLetter);
-        
+        setTimeout(() => {
+            setEachWin(false);
+        }, 1000)
     }, [bingoCount]);
 
     const overlayDisplayToggle = userWon ? 'overlayScreenDisplay' : '';
 
     return (
         <div className="cupContainer">
+            <Confetti className="confettiDiv" active={ eachWin } config={ config }/>
             <div className="bingoBoxDiv">
                 {renderLetter}
             </div>
             <div className={`overlayScreen ${overlayDisplayToggle}`}>
-                <Confetti active={ userWon } config={ config }/>
                 <img className="imageOverlayScreen" src={Trophy} alt="Trophy" />
             </div>
         </div>

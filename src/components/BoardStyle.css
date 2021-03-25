@@ -2,6 +2,13 @@
   text-align: center;
   margin: 0 auto;
   width: 100%;
+  background-image: url('../images/backg.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  
 }
 
 h3 {
@@ -9,7 +16,7 @@ h3 {
 }
 
 .tileSpan {
-  padding-right: 12%;
+  padding-right: 10%;
 }
 
 .tileWrapper {
@@ -20,21 +27,90 @@ h3 {
   grid-auto-rows: 1fr;
   text-align: center;
   margin: 0 auto;
+  
 }
 
 .tileStyle {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  padding: 2%;
+  padding: 4%;
   cursor: pointer;
+  color: black;
+  background-color: rgb(163, 163, 163);
+}
+
+@keyframes fadein {
+  10% {
+    opacity:1;
+  }
+  50% {
+      opacity:0.2;
+  }
+  75% {
+    opacity:0.4;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  10% {
+    opacity:1;
+  }
+  50% {
+      opacity:0.2;
+  }
+  75% {
+    opacity:0.4;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@-webkit-keyframes fadein {
+  10% {
+      opacity:1;
+  }
+  50% {
+      opacity:0.2;
+  }
+  75% {
+    opacity:0.4;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@-o-keyframes fadein { 
+  10% {
+    opacity:1;
+  }
+  50% {
+      opacity:0.2;
+  }
+  75% {
+    opacity:0.4;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .clickedTile {
-  color: rgba(0,0,0,0.5);
-  background: rgb(252, 109, 109, 0.2);
+  color: black;
+  background: rgb(114, 199, 255);
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; 
+  -webkit-animation: fadein 2s; 
+  -o-animation: fadein 2s; 
+  -webkit-animation-fill-mode: forwards; 
+  -moz-animation-fill-mode: forwards;  
+  -o-animation-fill-mode: forwards;   
+  -ms-animation-fill-mode: forwards;  
+  animation-fill-mode: forwards; 
 }
 
 .disableClickEvent {
@@ -48,10 +124,12 @@ h3 {
   text-align: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  /* border: 1px solid blue; */
 }
 
 .bingoBoxDiv {
+  /* border: 1px solid red; */
   width: 60%;
   height: 30%;
   margin: 0 auto;
@@ -77,7 +155,7 @@ h3 {
 }
 
 .imageOverlayScreen {
-  margin: 3%;
+  margin: 6%;
   width: 35%;
   height: 50%;
   /* transition: visibility 0s, opacity 5s linear; */
@@ -90,14 +168,14 @@ and (max-device-width: 640px) {
   .tileWrapper {
     width: 90%;
   }
-  
+
   .tileStyle {
-    font-size: 0.2em;
+    font-size: 8px;
   }
 
   .tileSpan {
     padding-right: 5%;
-    font-size: 0.1em;
+    font-size: 5px;
   }
 
   .imageOverlayScreen {
@@ -105,4 +183,12 @@ and (max-device-width: 640px) {
     width: 60%;
     height: 30%;
   }
+}
+
+.confettiDiv {
+  /* border: 1px solid red; */
+  width: 50%;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
 }
