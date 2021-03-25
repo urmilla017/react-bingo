@@ -141,7 +141,6 @@ const Board = () => {
     const [bingoCol, setBingoCol] = useState();
     const [bingoDiaLeft, setBingoDiaLeft] = useState(false);
     const [bingoDiaRight, setBingoDiaRight] = useState(false);
-    const [whatBingo, setWhatBingo] = useState('');
     const [bingoCount, setBingoCount] = useState(-1);
     const [userWon, setUserWon] = useState(false);
 
@@ -155,34 +154,33 @@ const Board = () => {
     useEffect(() => {
         setBingoRow();
         setBingoCol();
+
+        const removeElementFromMatrix = (element, matrix) => {
+            if (element > -1) {
+                matrix.splice(element, 1);
+            }
+        }
         
         const checkForBingo = (isChosen) => {
             const bingoMatrixRangeDia = [ 0, 1, 2, 3, 4 ];
 
             if(bingoRow !== undefined) {
-                setWhatBingo('Bingo');
                 setBingoCount(bingoCount + 1);
             } else {
                 const bingoRows = bingoMatrixRangeRow.find(row => bingoMatrixRangeRow.every(column => isChosen[row * 5 + column]));
-                if (bingoRows > -1) {
-                    bingoMatrixRangeRow.splice(bingoRows, 1);
-                }
+                removeElementFromMatrix(bingoRows, bingoMatrixRangeRow);
                 setBingoRow(bingoRows);
             }
 
             if(bingoCol !== undefined) {
-                setWhatBingo('Bingo');
                 setBingoCount(bingoCount + 1);
             } else {
                 const bingoCols = bingoMatrixRangeCol.find(column => bingoMatrixRangeCol.every(row => isChosen[row * 5 + column]));
-                if (bingoCols > -1) {
-                    bingoMatrixRangeCol.splice(bingoCols, 1);
-                }
+                removeElementFromMatrix(bingoCols, bingoMatrixRangeCol);
                 setBingoCol(bingoCols);
             }
 
             if(bingoDiaLeft && !diagonalLeftDone) {
-                setWhatBingo('You have a left diagonal');
                 diagonalLeftDone = true;
                 setBingoCount(bingoCount + 1);
             } else {
@@ -192,7 +190,6 @@ const Board = () => {
             }
 
             if(bingoDiaRight && !diagonalRightDone) {
-                setWhatBingo('You have a right diagonal');
                 diagonalRightDone = true;
                 setBingoCount(bingoCount + 1);
             } else {
@@ -238,7 +235,7 @@ const Board = () => {
                 {renderedItems}
             </div>
             <div>
-                <Cup whatBingo={whatBingo} bingoCount={bingoCount} userWon={userWon} />
+                <Cup bingoCount={bingoCount} userWon={userWon} />
             </div>
         </div>
     );

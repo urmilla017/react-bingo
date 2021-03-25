@@ -17,7 +17,7 @@ const config = {
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
-const Cup = ({ whatBingo, bingoCount, userWon }) => {
+const Cup = ({ bingoCount, userWon }) => {
     const [renderLetter, setRenderLetter] = useState('');
 
     useEffect(() => {
