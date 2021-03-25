@@ -1,0 +1,104 @@
+.appContainer {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+}
+
+.tileSpan {
+  padding-right: 12%;
+}
+
+.tileWrapper {
+  padding: 1%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-auto-rows: 1fr;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tileStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 2%;
+  cursor: pointer;
+}
+
+.clickedTile {
+  color: rgba(0,0,0,0.5);
+  background: rgb(252, 109, 109, 0.2);
+}
+
+.disableClickEvent {
+  pointer-events: none;
+  cursor: default;
+  color: rgba(0,0,0,0.5);
+}
+
+.cupContainer {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.bingoBoxDiv {
+  width: 60%;
+  height: 30%;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+
+@media screen 
+and (min-device-width: 200px) 
+and (max-device-width: 640px) {
+  .tileStyle {
+    font-size: 0.2em;
+  }
+
+  .tileSpan {
+    padding-right: 5%;
+    font-size: 0.1em;
+  }
+
+  .imageOverlayScreen {
+    margin-top: 20%; 
+    width: 60%;
+    height: 40%;
+  }
+}
+
+.overlayScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+
+.overlayScreenDisplay {
+  visibility: visible;
+  /* transition: visibility 0s, opacity 5s linear; */
+}
+
+.imageOverlayScreen {
+  margin: 10%;
+  width: 50%;
+  height: 50%;
+  /* transition: visibility 0s, opacity 5s linear; */
+}
