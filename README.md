@@ -5,7 +5,8 @@
 - Multiple bingos are possible
 - Can be played in a browser or a mobile device
 - Confetti for each bingo win
-- Extra: Each individual win gives the player a letter from the word 'BINGO' and when there are five wins, the player gets a trophy. 
+- Extra: Each individual win gives the player a letter from the word 'BINGO' and when there are five wins, the player gets a trophy
+- The app has been deployed in Vercel
 
 ## To install dependencies
 
@@ -32,6 +33,10 @@ Cypress will open in the Chrome Browser
 
 <img width="1312" alt="cypress" src="https://user-images.githubusercontent.com/20908353/112538102-ce9b2780-8daf-11eb-8a74-4e86eb8285bb.png">
 
+## Video of the Cypress Automated Testing
+
+https://www.urmillakannuswamy.com/bingo.html
+
 ## Deployment
 
 The app is deployed in Vercel.
@@ -47,3 +52,7 @@ react-dom-confetti v0.2.0
 cypress v6.8.0
 
 cypress-react-selector v2.3.6
+
+## Operating System
+
+macOS Catalina (10.15.1)
