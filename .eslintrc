@@ -1,0 +1,9 @@
+{
+    "extends": ["eslint:recommended"],
+    "parserOptions": {
+        "rules": {
+            
+            "react-hooks/exhaustive-deps": "warn"
+        }
+    }
+}

@@ -36,7 +36,7 @@ const Board = () => {
         },
         "5": {
             key: 5,
-            label: '(load painful echo/feedback)',
+            label: '(load painful echo / feedback)',
             isSelected: false
         },
         "6": {
@@ -163,7 +163,7 @@ const Board = () => {
         }
         
         const checkForBingo = (isChosen) => {
-            const bingoMatrixRangeDia = [ 0, 1, 2, 3, 4 ];
+                const bingoMatrixRangeDia = [ 0, 1, 2, 3, 4 ];
 
             if(bingoRow !== undefined) {
                 setBingoCount(bingoCount + 1);
@@ -198,7 +198,6 @@ const Board = () => {
                 setBingoDiaRight(bingoDiagRight);
             }
         };
-
         setIsItBingo(checkForBingo(isChosen));
 
     }, [isChosen, isItBingo]);
@@ -231,12 +230,13 @@ const Board = () => {
     return (
         <div>
             <h3>Conference Call Bingo Board</h3>
-            <div className="tileWrapper">
-                {renderedItems}
-            </div>
             <div>
                 <Cup bingoCount={bingoCount} userWon={userWon} />
             </div>
+            <div className="tileWrapper">
+                {renderedItems}
+            </div>
+            
         </div>
     );
 };

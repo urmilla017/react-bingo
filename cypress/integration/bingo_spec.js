@@ -30,7 +30,7 @@ describe('Bingo Board', function() {
         cy.get(':nth-child(17)').click();
         cy.get(':nth-child(22)').click();
 
-        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'B');
+        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'Bingo Status: B');
     });
 
     it.only('should have two diagonal bingos', function() {
@@ -44,7 +44,7 @@ describe('Bingo Board', function() {
         cy.get('.tileWrapper > :nth-child(17)').click();
         cy.get('.tileWrapper > :nth-child(21)').click();
 
-        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'BI');
+        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'Bingo Status: BI');
     });
 
     it.only('should win the game and show confetti', function() {
@@ -72,7 +72,7 @@ describe('Bingo Board', function() {
         cy.get('.tileWrapper > :nth-child(20)').click();
         cy.get('.tileWrapper > :nth-child(15)').click();
 
-        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'BINGO')
+        cy.get('.bingoBoxDiv').invoke('text').should('eq', 'Bingo Status: BINGO')
         cy.get('.overlayScreen').should('have.class', 'overlayScreenDisplay');
 
         cy.react('Confetti').should('have.length', '1');

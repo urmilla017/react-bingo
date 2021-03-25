@@ -4,16 +4,16 @@ import Confetti from 'react-dom-confetti';
 import Trophy from '../images/trophy.jpeg';
 
 const config = {
-  angle: 0,
+  angle: 90,
   spread: 360,
   startVelocity: 40,
   elementCount: 70,
-  dragFriction: 0.12,
-  duration: 3000,
+  dragFriction: 0.35,
+  duration: 1000,
   stagger: 3,
   width: "10px",
   height: "10px",
-  perspective: "190px",
+  perspective: "200px",
   colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
 };
 
@@ -39,7 +39,7 @@ const Cup = ({ bingoCount, userWon }) => {
         <div className="cupContainer">
             <Confetti className="confettiDiv" active={ eachWin } config={ config }/>
             <div className="bingoBoxDiv">
-                {renderLetter}
+                Bingo Status: {renderLetter}
             </div>
             <div className={`overlayScreen ${overlayDisplayToggle}`}>
                 <img className="imageOverlayScreen" src={Trophy} alt="Trophy" />
