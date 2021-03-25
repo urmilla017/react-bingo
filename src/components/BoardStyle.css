@@ -14,7 +14,7 @@ h3 {
 
 .tileWrapper {
   padding: 1%;
-  width: 90%;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-auto-rows: 1fr;
@@ -77,8 +77,8 @@ h3 {
 }
 
 .imageOverlayScreen {
-  margin: 10%;
-  width: 50%;
+  margin: 3%;
+  width: 35%;
   height: 50%;
   /* transition: visibility 0s, opacity 5s linear; */
 }
@@ -86,6 +86,11 @@ h3 {
 @media screen 
 and (min-device-width: 200px) 
 and (max-device-width: 640px) {
+
+  .tileWrapper {
+    width: 90%;
+  }
+  
   .tileStyle {
     font-size: 0.2em;
   }
